@@ -14,22 +14,22 @@ const router = new Router({
                 {
                     name: 'home',
                     path: '/',
-                    component: () => import('@/views/product/Index'),
+                    component: () => import('@/views/product/Product'),
                 },
                 {
                     name: 'authentication',
                     path: '/login',
-                    component: () => import('@/views/authentication/Index'),
+                    component: () => import('@/views/authentication/Authentication'),
                 },
                 {
                     name: 'account',
                     path: '/account',
-                    component: () => import('@/views/account/Index'),
+                    component: () => import('@/views/account/Account'),
                 },
                 {
                     name: 'checkout',
                     path: '/checkout',
-                    component: () => import('@/views/shopping/Index'),
+                    component: () => import('@/views/shopping/Shopping'),
                 },
             ],
         },

@@ -15,12 +15,11 @@
 
     <v-card-text>
       <span class="subheading">Tamanhos</span>
-
-      <v-chip-group v-model="selection" active-class="green text--accent-4" mandatory>
-        <v-chip>P</v-chip>
-        <v-chip>M</v-chip>
-        <v-chip>G</v-chip>
-        <v-chip>GG</v-chip>
+      <v-chip-group v-model="size" active-class="primary white--text" column mandatory>
+        <v-chip value="P">P</v-chip>
+        <v-chip value="M">M</v-chip>
+        <v-chip value="G">G</v-chip>
+        <v-chip value="GG">GG</v-chip>
       </v-chip-group>
     </v-card-text>
 
@@ -59,13 +58,14 @@ export default {
   },
 
   data: () => ({
-    selection: null
+    size: ""
   }),
 
   methods: {
     addShoppingCart(item) {
       item.imgUrl = "https://cdn.vuetifyjs.com/images/cards/cooking.png";
       item.amount = 1;
+      item.size = this.size;
       this.$store.dispatch("ADD_SHOPPING_CART", item);
     }
   },
