@@ -21,6 +21,16 @@ const router = new Router({
                     path: '/login',
                     component: () => import('@/views/authentication/Index'),
                 },
+                {
+                    name: 'account',
+                    path: '/account',
+                    component: () => import('@/views/account/Index'),
+                },
+                {
+                    name: 'checkout',
+                    path: '/checkout',
+                    component: () => import('@/views/shopping/Index'),
+                },
             ],
         },
     ],

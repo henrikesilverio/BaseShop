@@ -5,13 +5,27 @@
 
       <v-row>
         <v-col cols="12">
-          <v-text-field label="E-mail" outlined></v-text-field>
-        </v-col>
-      </v-row>
-
-      <v-row>
-        <v-col cols="12">
-          <v-text-field label="Senha" type="password" outlined></v-text-field>
+          <v-text-field
+            v-model="email"
+            label="E-mail"
+            autocomplete="new-password"
+            :counter="50"
+            :rules="emailRules"
+            required
+            outlined
+            dense
+          ></v-text-field>
+          <v-text-field
+            v-model="password"
+            label="Senha"
+            autocomplete="new-password"
+            type="password"
+            :counter="10"
+            :rules="passwordRules"
+            required
+            outlined
+            dense
+          ></v-text-field>
         </v-col>
       </v-row>
 
@@ -23,6 +37,10 @@
         <v-col cols="12">
           <v-btn block dark color="success">Entrar</v-btn>
         </v-col>
+
+        <v-col cols="12">
+          <v-btn text dark color="black" to="/account">Cadastre-se</v-btn>
+        </v-col>
       </v-row>
     </v-col>
   </v-row>
@@ -32,10 +50,20 @@
 export default {
   name: "LoginPage",
 
+  data: () => ({
+    email: "",
+    emailRules: [
+      v => !!v || "Campo obrigatório",
+      v => /.+@.+\..+/.test(v) || "E-mail inválido"
+    ],
+    password: "",
+    passwordRules: [v => !!v || "Campo obrigatório"]
+  }),
+
   props: {
     toogleScreen: {
       type: Function
     }
-  },
+  }
 };
 </script>

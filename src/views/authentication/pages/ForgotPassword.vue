@@ -6,7 +6,7 @@
 
       <v-row>
         <v-col cols="12">
-          <v-text-field label="E-mail" outlined></v-text-field>
+          <v-text-field label="E-mail" outlined dense></v-text-field>
         </v-col>
       </v-row>
 

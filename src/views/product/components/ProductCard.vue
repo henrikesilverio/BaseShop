@@ -29,7 +29,7 @@
         block
         class="white--text"
         color="green accent-4"
-        @click="addShoppingCart({ id, name, price })"
+        @click="addShoppingCart({ id, name, price, description })"
       >Adicionar no carrinho</v-btn>
     </v-card-actions>
   </v-card>
@@ -65,6 +65,7 @@ export default {
   methods: {
     addShoppingCart(item) {
       item.imgUrl = "https://cdn.vuetifyjs.com/images/cards/cooking.png";
+      item.amount = 1;
       this.$store.dispatch("ADD_SHOPPING_CART", item);
     }
   },

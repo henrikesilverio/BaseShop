@@ -32,9 +32,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.full-height {
-  height: 100%;
-}
-</style>

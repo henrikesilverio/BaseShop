@@ -45,7 +45,7 @@
     </div>
 
     <div class="pa-2" v-if="shoppingCart.length !== 0">
-      <v-btn class="success" block>Finalizar</v-btn>
+      <v-btn class="success" to="/checkout" block>Finalizar</v-btn>
     </div>
   </v-navigation-drawer>
 </template>
