@@ -35,7 +35,7 @@
         </v-col>
 
         <v-col cols="12">
-          <v-btn block dark color="success">Entrar</v-btn>
+          <v-btn block dark color="success" @click="login">Entrar</v-btn>
         </v-col>
 
         <v-col cols="12">
@@ -50,6 +50,12 @@
 export default {
   name: "LoginPage",
 
+  props: {
+    toogleScreen: {
+      type: Function
+    }
+  },
+
   data: () => ({
     email: "",
     emailRules: [
@@ -60,9 +66,13 @@ export default {
     passwordRules: [v => !!v || "Campo obrigatório"]
   }),
 
-  props: {
-    toogleScreen: {
-      type: Function
+  methods: {
+    login() {
+      this.$store.commit("SET_USER", {
+        email: this.email,
+        password: this.password
+      });
+      this.$router.push("/");
     }
   }
 };

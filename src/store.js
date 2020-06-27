@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
+        user: null,
         drawer: null,
         shoppingCart: [],
         shoppingCartCount: 0,
@@ -14,9 +15,12 @@ export default new Vuex.Store({
             show: false,
             color: "info",
             message: ""
-        }
+        },
     },
     mutations: {
+        SET_USER(state, payload) {
+            state.user = payload
+        },
         SET_DRAWER(state, payload) {
             state.drawer = payload
         },

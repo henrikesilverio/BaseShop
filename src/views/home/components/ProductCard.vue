@@ -1,6 +1,21 @@
 <template>
   <v-card class="mx-auto" max-width="400">
-    <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
+    <v-hover>
+      <template v-slot:default="{ hover }">
+        <v-card class="mx-auto" max-width="344">
+          <v-img
+            height="250"
+            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+          ></v-img>
+          <v-fade-transition>
+            <v-overlay v-if="hover" color="primary" absolute>
+              <v-btn :to="{ name: routeName, params: { id }  }">Ver detalhes</v-btn>
+            </v-overlay>
+          </v-fade-transition>
+        </v-card>
+      </template>
+    </v-hover>
+
     <v-card-title>
       <h2 class="display-1">{{ name }}</h2>
       <v-spacer></v-spacer>
@@ -58,7 +73,8 @@ export default {
   },
 
   data: () => ({
-    size: ""
+    size: "",
+    routeName: "product"
   }),
 
   methods: {
