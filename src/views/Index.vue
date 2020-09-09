@@ -22,7 +22,7 @@
           <template v-slot:activator="{ on, attrs }">
             <v-btn text v-bind="attrs" v-on="on">
               <v-icon size="35">mdi-account</v-icon>
-              <span class="mr-2">Henrique</span>
+              <span class="mr-2">{{user.email}}</span>
             </v-btn>
           </template>
           <v-list>
@@ -76,7 +76,7 @@ export default {
     toggleShoppingCartDrawer() {
       this.$store.dispatch("TOGGLE_SHOPPING_CART_DRAWER");
     },
-    logoff(){
+    logoff() {
       this.$store.commit("SET_USER", null);
     }
   },
@@ -102,8 +102,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .full-height {
   height: 100%;
+}
+
+.v-text-field-center input {
+  text-align: center !important;
 }
 </style>

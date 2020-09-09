@@ -40,63 +40,15 @@ export default {
   },
 
   data: () => ({
-    page: 1,
-    products: [
-      {
-        id: 1,
-        name: "Produto 1",
-        description: "descrição do produto 1",
-        price: 123.45
-      },
-      {
-        id: 2,
-        name: "Produto 2",
-        description: "descrição do produto 2",
-        price: 223.45
-      },
-      {
-        id: 3,
-        name: "Produto 3",
-        description: "descrição do produto 3",
-        price: 323.45
-      },
-      {
-        id: 4,
-        name: "Produto 4",
-        description: "descrição do produto 4",
-        price: 423.45
-      },
-      {
-        id: 5,
-        name: "Produto 5",
-        description: "descrição do produto 5",
-        price: 523.45
-      },
-      {
-        id: 6,
-        name: "Produto 6",
-        description: "descrição do produto 6",
-        price: 623.45
-      },
-      {
-        id: 7,
-        name: "Produto 7",
-        description: "descrição do produto 7",
-        price: 723.45
-      },
-      {
-        id: 8,
-        name: "Produto 8",
-        description: "descrição do produto 8",
-        price: 823.45
-      },
-      {
-        id: 9,
-        name: "Produto 9",
-        description: "descrição do produto 9",
-        price: 923.45
+    page: 1
+  }),
+
+  computed: {
+    products: {
+      get() {
+        return this.$store.state.products;
       }
-    ]
-  })
+    }
+  }
 };
 </script>

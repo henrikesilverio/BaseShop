@@ -58,7 +58,7 @@
     </v-simple-table>
     <v-row class="d-flex justify-end">
       <v-btn class="mx-2" color="info" to="/">Continue comprando</v-btn>
-      <v-btn class="mx-2" color="success">Finalizar</v-btn>
+      <v-btn class="mx-2" color="success" @click="finishBuy()">Finalizar</v-btn>
     </v-row>
   </v-container>
 </template>
@@ -80,6 +80,14 @@ export default {
         (memo, item) => memo + item.price * item.amount,
         0
       );
+    },
+    finishBuy() {
+      if (this.$store.state.user == null) {
+        this.$router.push("/login");
+      } 
+      else {
+        this.$router.push("/orders");
+      }
     }
   },
 

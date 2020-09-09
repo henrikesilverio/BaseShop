@@ -36,6 +36,11 @@ const router = new Router({
                     path: '/checkout',
                     component: () => import('@/views/shopping/Shopping'),
                 },
+                {
+                    name: 'orders',
+                    path: '/orders',
+                    component: () => import('@/views/shopping/Orders'),
+                },
             ],
         },
     ],

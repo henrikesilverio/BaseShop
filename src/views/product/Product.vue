@@ -5,7 +5,12 @@
         <gallery-slide />
       </v-col>
       <v-col cols="6">
-        <product-details />
+        <product-details
+          :id="product.id"
+          :name="product.name"
+          :description="product.description"
+          :price="product.price"
+        />
       </v-col>
     </v-row>
     <v-row>
@@ -26,8 +31,12 @@ export default {
     ProductSpecification: () => import("./components/ProductSpecification")
   },
 
-  data: () => ({
-    //
-  })
+  computed: {
+    product() {
+      return this.$store.state.products.find(
+        item => item.id == this.$route.params.id
+      );
+    }
+  }
 };
 </script>
